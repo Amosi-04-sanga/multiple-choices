@@ -1,0 +1,101 @@
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    min-height: 100vh;
+}
+
+.exam {
+
+    position: relative;
+    width: 400px;
+    background-color: wheat;
+    margin: 40px auto 10px;
+    border-radius: .5rem;
+    padding: .5rem;
+    
+ 
+    &__dash {
+        width: 50px;
+        border-bottom: 1px solid black;
+    }
+
+    &__question-wrapper {
+        margin: 50px 0;
+        padding: .4rem .6rem;
+        position: relative;
+    }
+
+    &__question {
+        display: flex;
+        margin: 0 0 .5rem 0;
+    }
+
+    // question response.
+    &__ans {
+       position: absolute;
+       right: 10px;
+       top: 50%;
+       transform: translateY(-50%);
+       transform: scaleX(0);
+    }
+
+    &__done {
+        margin: 50px 0;
+    }
+}
+
+.not,
+.correct {
+    transition: all .4s ease;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+#marks_info {
+    position: fixed;
+    top: 80px;
+    right: 50px;
+
+    display: grid;
+    place-content: center;
+
+    width: 80px;
+    height: 80px;
+    color: red;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid red;
+    transform: scaleY(0);
+}
+
+
+#marks_info.show {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform .3s ease-in-out;
+}
+
+#done {
+    display: block;
+    padding: .6rem .8rem;
+    background-color: rgb(145, 209, 18);
+    border-radius: .5rem;
+    margin: auto;
+
+    color: blue;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+}
+
+#done:hover {
+    transition: background-color .3s ease-in-out;
+    background-color: rgb(87, 124, 14);
+}
+

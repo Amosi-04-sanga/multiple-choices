@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  min-height: 100vh;
+}
+
+.exam {
+  position: relative;
+  width: 400px;
+  background-color: wheat;
+  margin: 40px auto 10px;
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+.exam__dash {
+  width: 50px;
+  border-bottom: 1px solid black;
+}
+
+.exam__question-wrapper {
+  margin: 50px 0;
+  padding: .4rem .6rem;
+  position: relative;
+}
+
+.exam__question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 .5rem 0;
+}
+
+.exam__ans {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.exam__done {
+  margin: 50px 0;
+}
+
+.not,
+.correct {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+#marks_info {
+  position: fixed;
+  top: 80px;
+  right: 50px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  width: 80px;
+  height: 80px;
+  color: red;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid red;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+#marks_info.show {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+#done {
+  display: block;
+  padding: .6rem .8rem;
+  background-color: #91d112;
+  border-radius: .5rem;
+  margin: auto;
+  color: blue;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+}
+
+#done:hover {
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+  background-color: #577c0e;
+}
+/*# sourceMappingURL=styles.css.map */
