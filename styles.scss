@@ -12,14 +12,17 @@ body {
 }
 
 .exam {
-
+    display: none;
     position: relative;
     width: 400px;
     background-color: wheat;
     margin: 40px auto 10px;
     border-radius: .5rem;
     padding: .5rem;
-    
+
+    &.active {
+        display: block;
+    }
  
     &__dash {
         width: 50px;
@@ -53,6 +56,7 @@ body {
 
 .not,
 .correct {
+
     transition: all .4s ease;
     transform-origin: left;
     transform: scaleX(1);
@@ -97,5 +101,53 @@ body {
 #done:hover {
     transition: background-color .3s ease-in-out;
     background-color: rgb(87, 124, 14);
+}
+
+
+.welcome {
+    width: 100%;
+    height: 100vh;
+    color: black;
+    display: grid;
+    background-color: rgb(88, 88, 116);
+    place-items: center;
+    animation: welcome 4.5s ease;        
+}
+
+@keyframes welcome {
+    0%{background-color: white; }
+    60%{background-color: rgb(101, 101, 155);}
+    100%{background-color: rgb(88, 88, 116);}
+}
+
+.welcome.active {
+    display: none;
+}
+
+#start-quiz {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    padding: .5rem .8rem;
+    background-color: goldenrod;
+    border-radius: 7px;
+    font-size: 40px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: 900;
+    border: none;
+    outline: none;
+}
+
+#start-quiz:hover {
+    transition: background-color .3s ease-in-out;
+    background-color: orangered;
+}
+
+#start-quiz.active {
+    display: block;
 }
 
